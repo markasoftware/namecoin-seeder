@@ -397,7 +397,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"", 
+static const string mainnet_seeds[] = {"nmc.seed.quisquis.de", "seed.nmc.markasoftware.com",
 				      ""};
 static const string testnet_seeds[] = {"",
                                        ""};
@@ -471,10 +471,6 @@ int main(int argc, char **argv) {
   }
   if (fDNS && !opts.host) {
     fprintf(stderr, "No hostname set. Please use -h.\n");
-    exit(1);
-  }
-  if (fDNS && !opts.mbox) {
-    fprintf(stderr, "No e-mail address set. Please use -m.\n");
     exit(1);
   }
   FILE *f = fopen("dnsseed.dat","r");
